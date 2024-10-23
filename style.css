@@ -16,7 +16,7 @@ header {
     left: 0;
     width: 100%;
     padding: 20px;
-    z-index: 100; /* To ensure the header is above other content */
+    z-index: 100;
 }
 
 .header-content {
@@ -27,65 +27,6 @@ header {
     margin: 0 auto;
 }
 
-/* Pour les téléphones de petite taille (portrait, largeur max: 600px) */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2.5rem; /* Réduire la taille de la police pour les petits écrans */
-    }
-
-    p {
-        font-size: 1rem; /* Ajuster la taille du texte */
-    }
-
-    .input-container {
-        flex-direction: column; /* Mettre les éléments en colonne pour éviter les débordements */
-        align-items: stretch;
-    }
-
-    input[type="email"], button {
-        width: 100%; /* Prendre toute la largeur disponible sur mobile */
-        margin-bottom: 10px; /* Ajouter de l'espace entre les champs */
-    }
-
-    .logo {
-        width: 80px; /* Réduire la taille du logo sur mobile */
-    }
-
-    .sign-in-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-}
-
-/* Pour les tablettes (portrait et paysage, largeur max: 1024px) */
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 3.5rem; /* Réduire légèrement la taille de la police */
-    }
-
-    p {
-        font-size: 1.05rem;
-    }
-
-    .header-content {
-        flex-direction: column; /* Réorganiser le header pour les tablettes */
-        align-items: center;
-    }
-
-    .logo {
-        width: 100px; /* Adapter la taille du logo pour les tablettes */
-    }
-
-    .input-container {
-        flex-direction: column;
-        width: 100%;
-        padding: 0 20px;
-    }
-
-    input[type="email"], button {
-        width: 100%;
-    }
-}
 .logo {
     width: 120px;
 }
@@ -93,7 +34,6 @@ header {
 .sign-in-btn {
     background-color: #e50914;
     color: white;
-    
     padding: 10px 20px;
     font-size: 1rem;
     text-decoration: none;
@@ -128,11 +68,13 @@ header {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
+    max-width: 90%; /* Limite la largeur du texte sur les petits écrans */
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 15px;
+    line-height: 1.2; /* Réduit l'espacement entre les lignes */
 }
 
 p {
@@ -144,6 +86,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 input[type="email"] {
@@ -151,10 +94,10 @@ input[type="email"] {
     font-size: 1rem;
     border: none;
     outline: none;
-    width: 300px;
-    max-width: 100%;
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 400px; /* Limite la largeur sur les grands écrans */
     border-radius: 3px;
-    margin-right: 10px;
+    margin-bottom: 10px; /* Ajoute un espace sous le champ email */
 }
 
 button {
@@ -166,8 +109,56 @@ button {
     cursor: pointer;
     border-radius: 3px;
     transition: background-color 0.3s ease;
+    width: 100%; /* Le bouton prend toute la largeur */
+    max-width: 400px; /* Limite la largeur sur les grands écrans */
 }
 
 button:hover {
     background-color: rgba(225, 38, 38, 0.782);
+}
+
+/* Media Queries */
+
+/* Pour les petits téléphones */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem; /* Réduit la taille des titres */
+    }
+
+    .header-content {
+        flex-direction: column; /* Organise les éléments du header en colonne */
+        align-items: center;
+    }
+
+    .logo {
+        width: 100px; /* Réduit la taille du logo */
+    }
+
+    .sign-in-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    input[type="email"], button {
+        max-width: 100%; /* Prend toute la largeur disponible sur mobile */
+    }
+}
+
+/* Pour les tablettes */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem; /* Taille légèrement réduite pour tablette */
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    input[type="email"], button {
+        max-width: 100%; /* Prend toute la largeur disponible sur tablette */
+    }
 }
