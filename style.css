@@ -27,6 +27,65 @@ header {
     margin: 0 auto;
 }
 
+/* Pour les téléphones de petite taille (portrait, largeur max: 600px) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem; /* Réduire la taille de la police pour les petits écrans */
+    }
+
+    p {
+        font-size: 1rem; /* Ajuster la taille du texte */
+    }
+
+    .input-container {
+        flex-direction: column; /* Mettre les éléments en colonne pour éviter les débordements */
+        align-items: stretch;
+    }
+
+    input[type="email"], button {
+        width: 100%; /* Prendre toute la largeur disponible sur mobile */
+        margin-bottom: 10px; /* Ajouter de l'espace entre les champs */
+    }
+
+    .logo {
+        width: 80px; /* Réduire la taille du logo sur mobile */
+    }
+
+    .sign-in-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Pour les tablettes (portrait et paysage, largeur max: 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3.5rem; /* Réduire légèrement la taille de la police */
+    }
+
+    p {
+        font-size: 1.05rem;
+    }
+
+    .header-content {
+        flex-direction: column; /* Réorganiser le header pour les tablettes */
+        align-items: center;
+    }
+
+    .logo {
+        width: 100px; /* Adapter la taille du logo pour les tablettes */
+    }
+
+    .input-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    input[type="email"], button {
+        width: 100%;
+    }
+}
 .logo {
     width: 120px;
 }
